@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/drawing-canvas/static/css/main.b1c64388.css",
-    "main.js": "/drawing-canvas/static/js/main.73b02c26.js",
+    "main.css": "/drawing-canvas/static/css/main.1833c6b7.css",
+    "main.js": "/drawing-canvas/static/js/main.e02bf0d1.js",
     "index.html": "/drawing-canvas/index.html",
-    "main.b1c64388.css.map": "/drawing-canvas/static/css/main.b1c64388.css.map",
-    "main.73b02c26.js.map": "/drawing-canvas/static/js/main.73b02c26.js.map"
+    "main.1833c6b7.css.map": "/drawing-canvas/static/css/main.1833c6b7.css.map",
+    "main.e02bf0d1.js.map": "/drawing-canvas/static/js/main.e02bf0d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.b1c64388.css",
-    "static/js/main.73b02c26.js"
+    "static/css/main.1833c6b7.css",
+    "static/js/main.e02bf0d1.js"
   ]
 }
