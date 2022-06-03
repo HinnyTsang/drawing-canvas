@@ -1,27 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-// all color used, modify color here if needed.
-const colorList = [
- '#000000',
- '#C0C0C0',
- '#808080',
- '#FFFFFF',
- '#800000',
- '#FF0000',
- '#800080',
- '#FF00FF',
- '#008000',
- '#00FF00',
- '#808000',
- '#FFFF00',
- '#000080',
- '#0000FF',
- '#008080',
- '#00FFFF',
-];
-
-
-
 const Canvas = () => {
 
   const [drawing, setDrawing] = useState(false);
@@ -34,6 +12,25 @@ const Canvas = () => {
   //  call when the app initialized.
   useEffect(() => {
 
+    let colorList = new Array(20);
+    // create color platte
+    for (var i = 0; i < colorList.length; ++i) {
+      
+      const angle = i / colorList.length;
+
+      var r = Math.sin(2*Math.PI * (angle + 0/3));
+      var g = Math.sin(2*Math.PI * (angle + 1/3));
+      var b = Math.sin(2*Math.PI * (angle + 2/3));
+
+      r = (Math.min(Math.max(r, -0.5), 0.5) + 0.5 ) * 255;
+      g = (Math.min(Math.max(g, -0.5), 0.5) + 0.5 ) * 255;
+      b = (Math.min(Math.max(b, -0.5), 0.5) + 0.5 ) * 255;
+
+      colorList[i] = `rgba(${r}, ${g}, ${b}, 1)`;
+    }
+    // add white and black in the color paltte.
+    colorList.push('rgba(255,255,255, 1)', 'rgba(0, 0, 0, 1)');
+
     const canvas = canvasRef.current;
     const context = canvas.getContext('2d');
     canvas.width = canvas.offsetWidth;
@@ -41,12 +38,12 @@ const Canvas = () => {
     contextRef.current = context;
     
     setColorButtons (colorList.map(
-      c => 
+      (c, i) => 
       <div 
         className='button--color'
         key={c}
         style={{backgroundColor:c}}
-        onClick={(e) =>  setColor(c)}
+        onClick={ e =>  setColor(c)}
       />
     ))
 
@@ -101,7 +98,11 @@ const Canvas = () => {
           onMouseDown={handleOnMouseDown}
           onMouseUp={handleOnMouseUp}
           onMouseMove={handleOnMouseMove}
+          onTouchStart={handleOnMouseDown}
+          onTouchEnd={handleOnMouseUp}
+          onTouchMove={handleOnMouseMove}
           ref={canvasRef}
+          style={{boxShadow: `0 0 5px 0px ${color}`}}
       />
       <div className='canvas--row'>
         <div className='button-set--color'>
