@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root {
+    /* global variables. */
+    font-size: 10px;
+    --bg-color: rgba(89, 89, 89, 1);
+    --canvas-color: rgba(255, 255, 255, 1);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 0;
+}
+
+.canvas--container {
+    width: 100%;
+    height: 80vh;
+    background-color: var(--bg-color);
+    padding: 40px 40px 0px 40px;
+}
+
+
+canvas {
+    width: 100%;
+    height: 100%;
+    background-color: var(--canvas-color);
+}
+
+canvas:hover {
+    cursor: crosshair;
+}
+
+.canvas--row {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-set--color {
+    display: flex;
+    width: 400rem;
+    max-width: 50%;
+    height: 100%;
+}
+
+.button--color {
+    width: 100%;
+    height: 100%;
+}
+
+.button--clean {
+    width: 4rem;
+    height: 100%;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button--clean:hover, .button--color:hover {
+    cursor: pointer;
 }
