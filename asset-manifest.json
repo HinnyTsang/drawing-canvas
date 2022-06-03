@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/drawing-canvas/static/css/main.b1c64388.css",
+    "main.js": "/drawing-canvas/static/js/main.73b02c26.js",
+    "index.html": "/drawing-canvas/index.html",
+    "main.b1c64388.css.map": "/drawing-canvas/static/css/main.b1c64388.css.map",
+    "main.73b02c26.js.map": "/drawing-canvas/static/js/main.73b02c26.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1c64388.css",
+    "static/js/main.73b02c26.js"
+  ]
+}
